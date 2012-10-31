@@ -6,7 +6,7 @@ class Dbxml < Formula
   md5 '2732618d5c4f642fba3d2a564a025986'
 
   def patches
-  	{ :p1 => "https://raw.github.com/gist/3761290/365a3c2077191530216faaf97ecbadaacb9efc2f/fix-gcc-4.7-build.patch" }
+  	{ :p1 => ["https://raw.github.com/gist/3761290/365a3c2077191530216faaf97ecbadaacb9efc2f/fix-gcc-4.7-build.patch", "https://raw.github.com/gist/3986724/f27306c03f42a85a43fc667d5c57a69ec70a2920/UnionQP-segfault.diff"]}
   end
 
   def install
