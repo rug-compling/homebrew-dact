@@ -5,10 +5,10 @@ class Alpinocorpus < Formula
 	depends_on 'boost'
 	depends_on 'dbxml'
 
-	url 'https://github.com/rug-compling/alpinocorpus/tarball/1.4.0'
+	url 'https://github.com/rug-compling/alpinocorpus/tarball/1.4.1'
 	homepage 'http://github.com/rug-compling/alpinocorpus'
 	head 'https://github.com/rug-compling/alpinocorpus.git'
-	sha1 'd19b4ed100291971227f36f4f0435d1fe3263ada'
+	sha1 '54fd87cd2c4caeb77dea8273cb27740a8f82e7bc'
 
 	def install
 		args = std_cmake_args
