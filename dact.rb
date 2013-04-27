@@ -5,10 +5,10 @@ class Dact < Formula
 	depends_on 'alpinocorpus'
 	depends_on 'qt'
 
-	url 'https://github.com/rug-compling/dact/tarball/1.6.0'
+	url 'https://github.com/rug-compling/dact/tarball/2.0.3'
 	homepage 'http://github.com/rug-compling/dact'
 	head 'https://github.com/rug-compling/dact.git'
-	sha1 '273cf43dc8d1b6aa1fc12f8f9d0e213d01074d24'
+	sha1 '40ff1bad73d7216b7034f6337c38314ead01446f'
 
 	def install
 		args = std_cmake_args
