@@ -1,14 +1,14 @@
 require 'formula'
 
 class Dact < Formula
-	depends_on 'cmake' => :build
-	depends_on 'alpinocorpus'
-	depends_on 'qt'
-
-	url 'https://github.com/rug-compling/dact/tarball/2.0.3'
+	url 'https://github.com/rug-compling/dact/archive/2.0.5.tar.gz'
 	homepage 'http://github.com/rug-compling/dact'
 	head 'https://github.com/rug-compling/dact.git'
-	sha1 '40ff1bad73d7216b7034f6337c38314ead01446f'
+	sha1 'ae37a04b7ca48ed8c69a5b070142d6cca46c02f5'
+
+	depends_on 'cmake' => :build
+	depends_on 'rug-compling/dact/alpinocorpus'
+	depends_on 'qt'
 
 	def install
 		args = std_cmake_args
