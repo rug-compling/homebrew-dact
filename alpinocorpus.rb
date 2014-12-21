@@ -1,10 +1,10 @@
 require 'formula'
 
 class Alpinocorpus < Formula
-	url 'https://github.com/rug-compling/alpinocorpus/archive/2.0.3.tar.gz'
+	url 'https://github.com/rug-compling/alpinocorpus/archive/2.2.0.tar.gz'
 	homepage 'http://github.com/rug-compling/alpinocorpus'
 	head 'https://github.com/rug-compling/alpinocorpus.git'
-	sha1 '095df854d9c706919d7d0e7c4ac5bab0ffff5db3'
+	sha1 '20bbf73088aab7cfde0faac1516884406d20bec8'
 
 	depends_on 'cmake' => :build
 	depends_on 'boost'
