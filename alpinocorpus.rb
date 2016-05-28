@@ -8,7 +8,7 @@ class Alpinocorpus < Formula
 
 	depends_on 'cmake' => :build
 	depends_on 'boost'
-	depends_on 'dbxml'
+	depends_on 'legacy-dbxml'
 
 	def install
 		cmake_args = std_cmake_args

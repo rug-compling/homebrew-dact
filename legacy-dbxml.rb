@@ -1,6 +1,6 @@
 require 'formula'
 
-class Dbxml < Formula
+class LegacyDbxml < Formula
   url 'http://download.oracle.com/berkeley-db/dbxml-2.5.16.tar.gz'
   homepage 'http://www.oracle.com/us/products/database/berkeley-db/index-066571.html'
   sha256 'f2423be3805811a9cca71d6877c0b1bdc1941cd76c3f26d6eb011a5724a3edd2'
