@@ -1,10 +1,10 @@
 require 'formula'
 
 class Dact < Formula
-	url 'https://github.com/rug-compling/dact/archive/2.4.1.tar.gz'
+	url 'https://github.com/rug-compling/dact/archive/2.4.4.tar.gz'
 	homepage 'http://github.com/rug-compling/dact'
 	head 'https://github.com/rug-compling/dact.git'
-	sha256 '8a32949aa8db8682b4fac0bd6d7fb6676608402a33e791aaa18cfd73102e0934'
+	sha256 '7a1ecaa0622d759c317d7236ec7ef9e13224b39def7cd58d1a29a3ae06ab328b'
 
 	depends_on 'cmake' => :build
 	depends_on 'rug-compling/dact/alpinocorpus'
