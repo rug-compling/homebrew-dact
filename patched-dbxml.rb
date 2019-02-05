@@ -9,8 +9,6 @@ class PatchedDbxml < Formula
   depends_on "xqilla"
   depends_on "berkeley-db"
 
-  needs :cxx11
-
   # No public bug tracker or mailing list to submit this to, unfortunately.
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/master/dbxml/c%2B%2B11.patch"
