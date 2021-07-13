@@ -5,9 +5,9 @@ class PatchedDbxml < Formula
   sha256 "a8fc8f5e0c3b6e42741fa4dfc3b878c982ff8f5e5f14843f6a7e20d22e64251a"
   revision 1
 
+  depends_on "berkeley-db"
   depends_on "xerces-c"
   depends_on "xqilla"
-  depends_on "berkeley-db"
 
   # No public bug tracker or mailing list to submit this to, unfortunately.
   patch do
@@ -24,8 +24,11 @@ class PatchedDbxml < Formula
     ENV.cxx11
 
     inreplace "dbxml/configure" do |s|
-      s.gsub! "lib/libdb-*.la | sed -e 's\/.*db-\\\(.*\\\).la", "lib/libdb-*.a | sed -e 's/.*db-\\(.*\\).a"
-      s.gsub! "lib/libdb-*.la", "lib/libdb-*.a"
+      # Static libraries are not included anymore. Libraries have symlinks
+      # for major versions, avoid finding multiple versions (a homebrew
+      # prefix only contains one version anyway).
+      s.gsub! "lib/libdb-*.la | sed -e 's\/.*db-\\\(.*\\\).la", "lib/libdb-*.dylib | head -n1 | sed -e 's/.*db-\\(.*\\).dylib"
+      s.gsub! "lib/libdb-*.la", "lib/libdb-*.dylib"
       s.gsub! "libz.a", "libz.dylib"
     end
 
