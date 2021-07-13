@@ -1,21 +1,23 @@
-require 'formula'
-
 class Alpinocorpus < Formula
-	url 'https://github.com/rug-compling/alpinocorpus/archive/2.8.0.tar.gz'
-	homepage 'http://github.com/rug-compling/alpinocorpus'
-	head 'https://github.com/rug-compling/alpinocorpus.git'
-	sha256 '5d3fb5cf9d0e6b18195c789e81686cbb8d759cfd753de8ae189c1e593412d566'
+  desc 'Command-line utilities for Alpino treebanks'
+  homepage 'http://github.com/rug-compling/alpinocorpus'
+  url 'https://github.com/rug-compling/alpinocorpus/archive/0a0c077.tar.gz'
+  sha256 'b25d26c20b7a0054e625e0ec96b5ee98fc18117eaaf66ffc9b31068344eba5ad'
+  head 'https://github.com/rug-compling/alpinocorpus.git'
 
-	depends_on 'cmake' => :build
-	depends_on 'boost'
-	depends_on 'patched-dbxml'
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
+  depends_on "boost"
+  depends_on "patched-dbxml"
 
-	def install
-		cmake_args = std_cmake_args
+  def install
+    mkdir 'build' do
+      ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
 
-		mkdir 'build' do
-			system 'cmake', '..', *cmake_args
-			system 'make install'
-		end
-	end
+      system "meson", *std_meson_args, ".."
+      system "ninja", "-v"
+      system "ninja", "install", "-v"
+    end
+  end
 end
